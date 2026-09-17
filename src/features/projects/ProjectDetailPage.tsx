@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import TechBadge from "@/components/TechBadge";
+import StatusBadge from "@/components/StatusBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import { useReveal } from "@/hooks/useInView";
@@ -88,18 +89,7 @@ export default function ProjectDetailPage() {
                     <div className="absolute inset-x-0 bottom-0 z-10 p-8 md:p-16">
                         <div>
                             <div className="mb-3 flex items-center gap-2">
-                                <span
-                                    className={`rounded-full border px-2 py-0.5 font-mono text-[10px] font-medium ${
-                                        project.status === "Live"
-                                            ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-300"
-                                            : project.status ===
-                                                "In Development"
-                                              ? "border-amber-500/30 bg-amber-500/20 text-amber-300"
-                                              : "border-white/20 bg-white/10 text-white/50"
-                                    }`}
-                                >
-                                    {project.status}
-                                </span>
+                                <StatusBadge status={project.status} />
 
                                 <span className="font-mono text-[11px] text-white/60">
                                     {project.year}

@@ -1,4 +1,5 @@
 import TechBadge from "@/components/TechBadge";
+import StatusBadge from "@/components/StatusBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import type { Project } from "@/features/projects/data/projects";
@@ -57,17 +58,7 @@ export default function HomeProjectCard({
                 </div>
                 {/* Status badge */}
                 <div className="absolute inset-e-3 top-3">
-                    <span
-                        className={`rounded-full border font-mono text-[10px] font-medium px-2 py-0.5 ${
-                            project.status === "Live"
-                                ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-400"
-                                : project.status === "In Development"
-                                  ? "border-amber-500/30 bg-amber-500/20 text-amber-400"
-                                  : "border-white/20 bg-white/10 text-white/50"
-                        }`}
-                    >
-                        {project.status}
-                    </span>
+                    <StatusBadge status={project.status} />
                 </div>
             </div>
 

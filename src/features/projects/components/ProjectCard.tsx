@@ -1,4 +1,5 @@
 import TechBadge from "@/components/TechBadge";
+import StatusBadge from "@/components/StatusBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import type { Project } from "@/features/projects/data/projects";
@@ -57,17 +58,7 @@ export default function ProjectCard({
                 {/* Overlay */}
                 <div className="absolute inset-0 flex flex-col justify-between bg-linear-to-t from-black/60 via-black/10 to-transparent p-5">
                     <div className="flex items-center justify-between">
-                        <span
-                            className={`rounded-full border font-mono text-[10px] font-medium px-2 py-0.5 ${
-                                project.status === "Live"
-                                    ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-300"
-                                    : project.status === "In Development"
-                                      ? "border-amber-500/30 bg-amber-500/20 text-amber-300"
-                                      : "border-white/20 bg-white/10 text-white/50"
-                            }`}
-                        >
-                            {project.status}
-                        </span>
+                        <StatusBadge status={project.status} />
 
                         <span className="font-mono text-[11px] text-white/70">
                             {project.year}

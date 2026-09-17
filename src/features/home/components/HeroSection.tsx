@@ -25,7 +25,7 @@ export default function HeroSection() {
             <div className="pointer-events-none absolute inset-s-1/4 top-1/3 size-96 animate-pulse-slow rounded-full bg-accent/10 blur-[120px]" />
 
             {/* Secondary glow */}
-            <div className="pointer-events-none absolute -end-32 top-1/4 size-72 animate-float-slow rounded-full bg-accent/5 blur-[100px]" />
+            <div className="pointer-events-none absolute -inset-e-32 top-1/4 size-72 animate-float-slow rounded-full bg-accent/5 blur-[100px]" />
 
             <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 pt-28">
                 <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1fr_420px] lg:gap-20">
