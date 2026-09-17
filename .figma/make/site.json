@@ -1,0 +1,10 @@
+{
+  "description": "This web application streamlines the design process, allowing users to create, collaborate, and share visual projects efficiently, enhancing creativity and productivity.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
