@@ -1,11 +1,11 @@
 export type ProjectStatus = "Live" | "In Development" | "Archived";
 export type FilterKey = "All" | "Frontend" | "Full Stack" | "React" | "Next.js";
 
-import alFakahany from "@/assets/al-fakahany.png";
-import brainTumorNet from "@/assets/brain-tumor-net.png";
-import taskFlow from "@/assets/task-flow.png";
-import electronicStore from "@/assets/electronic-store.png";
-import electronicStoreAdmin from "@/assets/electronic-store-admin.png";
+import alFakahany from "../../../assets/al-fakahany.png";
+import brainTumorNet from "../../../assets/brain-tumor-net.png";
+import taskFlow from "../../../assets/task-flow.png";
+import electronicStore from "../../../assets/electronic-store.png";
+import electronicStoreAdmin from "../../../assets/electronic-store-admin.png";
 
 
 export interface Project {
