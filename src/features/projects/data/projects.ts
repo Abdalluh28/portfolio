@@ -5,7 +5,7 @@ import Al_Fakahany from "@/assets/Al_Fakahany.png";
 import BrainTumorNet from "@/assets/BrainTumorNet.png";
 import TaskFlow from "@/assets/TaskFlow.png";
 import ElectronicStore from "@/assets/Electronic_Store.png";
-import ElectronicStoreAdmin from "@/assets/Electronic_store_admin.png";
+import ElectronicStoreAdmin from "@/assets/Electronic_Store_Admin.png";
 
 
 export interface Project {
