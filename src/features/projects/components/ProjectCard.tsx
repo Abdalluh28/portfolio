@@ -1,5 +1,4 @@
 import TechBadge from "@/components/TechBadge";
-import StatusBadge from "@/components/StatusBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import type { Project } from "@/features/projects/data/projects";
@@ -25,57 +24,45 @@ export default function ProjectCard({
         <article
             className={`animate-fade-up delay-${Math.min(index + 1, 8)} group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-black/10`}
         >
+            {/* Gradient header — clickable to detail */}
             <div
-                className={`relative h-52 cursor-pointer overflow-hidden ${
-                    project.image
-                        ? "bg-card"
-                        : `bg-linear-to-br ${project.gradient}`
-                }`}
+                className={`relative h-52 cursor-pointer overflow-hidden bg-gradient-to-br ${project.gradient}`}
                 onClick={onViewDetails}
             >
-                {project.image ? (
-                    <img
-                        src={project.image}
-                        alt={title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                ) : (
-                    <div
-                        className={`absolute inset-0 bg-linear-to-br ${project.gradient}`}
-                    >
-                        <div
-                            className="absolute inset-0 opacity-[0.06]"
-                            style={{
-                                backgroundImage:
-                                    "linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%), linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%)",
-                                backgroundSize: "20px 20px",
-                                backgroundPosition: "0 0, 10px 10px",
-                            }}
-                        />
-                    </div>
-                )}
-
-                {/* Overlay */}
-                <div className="absolute inset-0 flex flex-col justify-between bg-linear-to-t from-black/60 via-black/10 to-transparent p-5">
+                <div
+                    className="absolute inset-0 opacity-[0.06]"
+                    style={{
+                        backgroundImage:
+                            "linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%), linear-gradient(45deg, white 25%, transparent 25%, transparent 75%, white 75%)",
+                        backgroundSize: "20px 20px",
+                        backgroundPosition: "0 0, 10px 10px",
+                    }}
+                />
+                <div className="absolute inset-0 flex flex-col justify-between p-5">
                     <div className="flex items-center justify-between">
-                        <StatusBadge status={project.status} />
-
-                        <span className="font-mono text-[11px] text-white/70">
+                        <span
+                            className={`rounded-full border font-mono text-[10px] font-medium px-2 py-0.5 ${
+                                project.status === "Live"
+                                    ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-300"
+                                    : project.status === "In Development"
+                                      ? "border-amber-500/30 bg-amber-500/20 text-amber-300"
+                                      : "border-white/20 bg-white/10 text-white/50"
+                            }`}
+                        >
+                            {project.status}
+                        </span>
+                        <span className="font-mono text-[11px] text-white/40">
                             {project.year}
                         </span>
                     </div>
-
                     <div>
                         <span
                             className="mb-1 block font-display text-2xl font-light tracking-tight text-white"
-                            style={{
-                                textShadow: "0 2px 12px rgba(0,0,0,0.6)",
-                            }}
+                            style={{ textShadow: "0 2px 12px rgba(0,0,0,0.6)" }}
                         >
                             {title}
                         </span>
-
-                        <span className="font-mono text-[11px] text-white/60">
+                        <span className="font-mono text-[11px] text-white/40">
                             {project.type}
                         </span>
                     </div>

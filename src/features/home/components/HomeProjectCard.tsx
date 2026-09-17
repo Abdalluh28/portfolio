@@ -1,5 +1,4 @@
 import TechBadge from "@/components/TechBadge";
-import StatusBadge from "@/components/StatusBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import type { Project } from "@/features/projects/data/projects";
@@ -25,30 +24,19 @@ export default function HomeProjectCard({
         <div
             className={`animate-fade-up delay-${Math.min(index + 1, 8)} group flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-black/10`}
         >
-            {/* Thumbnail: project image if available, otherwise gradient */}
-            <div className="relative h-44 overflow-hidden">
-                {project.image ? (
-                    <img
-                        src={project.image}
-                        alt={title}
-                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                ) : (
-                    <div
-                        className={`h-full w-full bg-linear-to-br ${project.gradient}`}
-                    >
-                        <div
-                            className="absolute inset-0 opacity-10"
-                            style={{
-                                backgroundImage:
-                                    "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)",
-                                backgroundSize: "40px 40px",
-                            }}
-                        />
-                    </div>
-                )}
-                {/* Title overlay */}
-                <div className="absolute inset-0 flex items-end bg-linear-to-t from-black/60 to-transparent p-4">
+            {/* Gradient thumbnail */}
+            <div
+                className={`relative h-44 overflow-hidden bg-linear-to-br ${project.gradient}`}
+            >
+                <div
+                    className="absolute inset-0 opacity-10"
+                    style={{
+                        backgroundImage:
+                            "radial-gradient(circle at 20% 50%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)",
+                        backgroundSize: "40px 40px",
+                    }}
+                />
+                <div className="absolute inset-0 flex items-end p-4">
                     <span
                         className="font-display text-lg font-light tracking-tight text-white/90"
                         style={{ textShadow: "0 1px 8px rgba(0,0,0,0.5)" }}
@@ -56,9 +44,18 @@ export default function HomeProjectCard({
                         {title}
                     </span>
                 </div>
-                {/* Status badge */}
                 <div className="absolute inset-e-3 top-3">
-                    <StatusBadge status={project.status} />
+                    <span
+                        className={`rounded-full border font-mono text-[10px] font-medium px-2 py-0.5 ${
+                            project.status === "Live"
+                                ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-400"
+                                : project.status === "In Development"
+                                  ? "border-amber-500/30 bg-amber-500/20 text-amber-400"
+                                  : "border-white/20 bg-white/10 text-white/50"
+                        }`}
+                    >
+                        {project.status}
+                    </span>
                 </div>
             </div>
 

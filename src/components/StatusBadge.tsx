@@ -1,25 +1,20 @@
-import type { ProjectStatus } from "@/features/projects/data/projects";
-
-/** Badge for project live/dev/archived status.
- *  Uses solid, opaque backgrounds so it remains legible over any image
- *  colour — light, dark, or gradient. */
+/** Badge for project live/dev/archived status (used in project cards). */
 interface StatusBadgeProps {
-    status: ProjectStatus | string;
+    status: string;
 }
 
 function getStatusClass(status: string): string {
     if (status === "Live")
-        return "border-emerald-500/40 bg-emerald-950 text-emerald-400";
+        return "border-emerald-500/30 bg-emerald-500/20 text-emerald-300";
     if (status === "In Development")
-        return "border-amber-500/40 bg-amber-950 text-amber-400";
-    // Archived / fallback
-    return "border-zinc-600/40 bg-zinc-900 text-zinc-400";
+        return "border-amber-500/30 bg-amber-500/20 text-amber-300";
+    return "border-white/20 bg-white/10 text-white/50";
 }
 
 export default function StatusBadge({ status }: StatusBadgeProps) {
     return (
         <span
-            className={`rounded-full border px-2 py-0.5 font-mono text-[10px] font-medium ${getStatusClass(status)}`}
+            className={`rounded-full border font-mono text-[10px] font-medium px-2 py-0.5 ${getStatusClass(status)}`}
         >
             {status}
         </span>

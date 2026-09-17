@@ -1,11 +1,11 @@
 export type ProjectStatus = "Live" | "In Development" | "Archived";
 export type FilterKey = "All" | "Frontend" | "Full Stack" | "React" | "Next.js";
 
-import alFakahany from "../../../assets/al-fakahany.png";
-import brainTumorNet from "../../../assets/brain-tumor-net.png";
-import taskFlow from "../../../assets/task-flow.png";
-import electronicStore from "../../../assets/electronic-store.png";
-import electronicStoreAdmin from "../../../assets/electronic-store-admin.png";
+// import alFakahany from "@/assets/al-fakahany.png";
+// import brainTumorNet from "@/assets/brain-tumor-net.png";
+// import taskFlow from "@/assets/task-flow.png";
+// import electronicStore from "@/assets/electronic-store.png";
+// import electronicStoreAdmin from "@/assets/electronic-store-admin.png";
 
 
 export interface Project {
@@ -63,7 +63,6 @@ export const projects: Project[] = [
         github: "https://github.com/Azal-Studio/el-fakahany",
         demo: "https://al-fakahany.azal.digital/",
         featured: true,
-        image: alFakahany,
         gradient: "from-orange-950 via-amber-950 to-orange-900",
         accentColor: "#F59E0B",
         overview:
@@ -138,7 +137,6 @@ export const projects: Project[] = [
         github: "https://github.com/Abdalluh28/brain-tumor",
         demo: "https://drive.google.com/file/d/11TpUo2lFo1OmT-_2twQC8BVzW_2XgaEK/view?usp=drive_link",
         featured: true,
-        image: brainTumorNet,
         gradient: "from-blue-950 via-indigo-950 to-violet-950",
         accentColor: "#6366F1",
         overview:
@@ -179,7 +177,6 @@ export const projects: Project[] = [
         github: "https://github.com/Abdalluh28/to_do_list",
         demo: "https://to-do-list-tau-lake-58.vercel.app/",
         featured: false,
-        image: taskFlow,
         gradient: "from-rose-950 via-pink-950 to-rose-900",
         accentColor: "#F43F5E",
         overview:
@@ -214,7 +211,6 @@ export const projects: Project[] = [
         github: "https://github.com/Abdalluh28/Electronic-Store",
         demo: "https://electronic-store-g5lb.vercel.app/",
         featured: false,
-        image: electronicStore,
         gradient: "from-cyan-950 via-sky-950 to-blue-900",
         accentColor: "#0EA5E9",
         overview:
@@ -245,7 +241,6 @@ export const projects: Project[] = [
         github: "https://github.com/Abdalluh28/Electronic-Store-admin-panel",
         demo: "https://store-admin-panel-rbmq.vercel.app/",
         featured: false,
-        image: electronicStoreAdmin,
         gradient: "from-purple-950 via-fuchsia-950 to-purple-900",
         accentColor: "#A855F7",
         overview:
