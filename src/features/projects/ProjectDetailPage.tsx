@@ -258,7 +258,7 @@ export default function ProjectDetailPage() {
                         </button>
 
                         <button
-                            onClick={() => navigate("/home")}
+                            onClick={() => navigate("/")}
                             className="text-sm text-accent hover:underline"
                         >
                             {lang === "ar" ? "الرئيسية" : "Home"}
