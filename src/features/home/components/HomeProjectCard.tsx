@@ -82,17 +82,15 @@ export default function HomeProjectCard({
 
                 {/* Actions */}
                 <div className="mt-auto flex items-center gap-2 pt-2">
-                    {project.github && (
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1.5 rounded border border-border px-3 py-1.5 text-xs text-muted-fg transition-colors hover:text-fg"
-                        >
-                            <GithubIcon size={13} />
-                            {tr.projects.github}
-                        </a>
-                    )}
+                    <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 rounded border border-border px-3 py-1.5 text-xs text-muted-fg transition-colors hover:text-fg"
+                    >
+                        <GithubIcon size={13} />
+                        {tr.projects.github}
+                    </a>
                     {project.demo && (
                         <a
                             href={project.demo}

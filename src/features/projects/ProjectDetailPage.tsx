@@ -1,12 +1,13 @@
 import Footer from "@/components/Footer";
+import StatusBadge from "@/components/StatusBadge";
 import TechBadge from "@/components/TechBadge";
 import { GithubIcon } from "@/components/icons";
 import { useApp } from "@/context/AppContext";
 import { useReveal } from "@/hooks/useInView";
 import { ArrowLeft, ExternalLink } from "lucide-react";
-import { projects } from "./data/projects";
-import ProjectDetailSection from "./components/ProjectDetailSection";
 import { useNavigate, useParams } from "react-router-dom";
+import ProjectDetailSection from "./components/ProjectDetailSection";
+import { projects } from "./data/projects";
 
 export default function ProjectDetailPage() {
     const { lang, tr } = useApp();
@@ -88,18 +89,7 @@ export default function ProjectDetailPage() {
                     <div className="absolute inset-x-0 bottom-0 z-10 p-8 md:p-16">
                         <div>
                             <div className="mb-3 flex items-center gap-2">
-                                <span
-                                    className={`rounded-full border px-2 py-0.5 font-mono text-[10px] font-medium ${
-                                        project.status === "Live"
-                                            ? "border-emerald-500/30 bg-emerald-500/20 text-emerald-300"
-                                            : project.status ===
-                                                "In Development"
-                                              ? "border-amber-500/30 bg-amber-500/20 text-amber-300"
-                                              : "border-white/20 bg-white/10 text-white/50"
-                                    }`}
-                                >
-                                    {project.status}
-                                </span>
+                                <StatusBadge status={project.status} />
 
                                 <span className="font-mono text-[11px] text-white/60">
                                     {project.year}
@@ -113,8 +103,7 @@ export default function ProjectDetailPage() {
                             <h1
                                 className="font-display text-[clamp(2.5rem,6vw,5rem)] font-light leading-tight text-white"
                                 style={{
-                                    textShadow:
-                                        "0 2px 20px rgba(0,0,0,0.7)",
+                                    textShadow: "0 2px 20px rgba(0,0,0,0.7)",
                                 }}
                             >
                                 {title}
@@ -127,15 +116,17 @@ export default function ProjectDetailPage() {
                 <div className="mx-auto max-w-4xl px-6 py-16">
                     {/* CTA links */}
                     <div className="mb-14 flex flex-wrap gap-3">
-                        <a
-                            href={project.github}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 rounded border border-border px-4 py-2 text-sm font-medium text-fg transition-colors hover:border-accent"
-                        >
-                            <GithubIcon size={16} />
-                            {tr.projects.github}
-                        </a>
+                        {project.github && (
+                            <a
+                                href={project.github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 rounded border border-border px-4 py-2 text-sm font-medium text-fg transition-colors hover:border-accent"
+                            >
+                                <GithubIcon size={16} />
+                                {tr.projects.github}
+                            </a>
+                        )}
 
                         {project.demo && (
                             <a
@@ -155,9 +146,7 @@ export default function ProjectDetailPage() {
                             <div className="reveal">
                                 <ProjectDetailSection
                                     label={
-                                        lang === "ar"
-                                            ? "نظرة عامة"
-                                            : "Overview"
+                                        lang === "ar" ? "نظرة عامة" : "Overview"
                                     }
                                 >
                                     <p className="text-base leading-relaxed text-fg">
@@ -265,9 +254,7 @@ export default function ProjectDetailPage() {
                             className="inline-flex items-center gap-2 text-sm text-muted-fg transition-colors hover:text-fg"
                         >
                             <ArrowLeft size={16} />
-                            {lang === "ar"
-                                ? "جميع المشاريع"
-                                : "All Projects"}
+                            {lang === "ar" ? "جميع المشاريع" : "All Projects"}
                         </button>
 
                         <button
