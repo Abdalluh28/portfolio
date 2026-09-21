@@ -25,6 +25,23 @@ export interface Contribution {
 
 export const contributions: Contribution[] = [
     {
+        id: "rhf-seterror-cancel-nested-delay-error",
+        repo: "react-hook-form/react-hook-form",
+        title: "Cancel pending nested delayError timers when setError is called on a parent",
+        titleAr:
+            "إلغاء مؤقّتات delayError المعلّقة للحقول المتداخلة عند استدعاء setError على الحقل الأب",
+        description:
+            "Fixed setError so it cancels pending delayError timers for nested fields, not just the exact path. Previously a stale child error could land after setError('parent') and merge into the server error. Aligned it with clearErrors, unregister and resetField, and added a fake-timer regression test.",
+        descriptionAr:
+            "أصلحت setError بحيث يلغي مؤقّتات delayError المعلّقة للحقول المتداخلة بدلاً من مؤقّت المسار نفسه فقط، فلا يظهر خطأ قديم للحقل الفرعي بعد تعيين خطأ على الحقل الأب ويندمج مع خطأ الخادم. جعلت السلوك متسقاً مع clearErrors وunregister وresetField، وأضفت اختبار انحدار بمؤقّتات وهمية.",
+        type: "Bug Fix",
+        tech: ["React", "TypeScript"],
+        status: "Merged",
+        date: "2026-09",
+        prUrl: "https://github.com/react-hook-form/react-hook-form/pull/13775",
+        featured: true,
+    },
+    {
         id: "ratq-filter-panel-redesign",
         repo: "Itqan-community/RATQ",
         title: "Redesign the resource filter panel with multi-select Creative Commons license filtering",
