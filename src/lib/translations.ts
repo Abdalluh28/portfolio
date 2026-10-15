@@ -4,7 +4,7 @@ export const t = {
     en: {
         name: "Abdo",
         fullName: "Abdalluh Khaled",
-        role: "Frontend Developer / Software Engineer",
+        role: "Frontend Engineer / Software Engineer",
         nav: {
             home: "Home",
             projects: "Projects",
@@ -13,7 +13,7 @@ export const t = {
             contact: "Contact",
         },
         hero: {
-            headline1: "Frontend Developer",
+            headline1: "Frontend Engineer",
             headline2: "building modern,",
             headline3: "scalable web apps.",
             sub: "I build responsive and production-ready digital experiences with React, TypeScript, and Next.js — focusing on clean architecture, performance, and great user experiences.",
@@ -55,7 +55,7 @@ export const t = {
         },
         about: {
             title: "About",
-            intro: "I'm a frontend developer focused on building modern, responsive, and maintainable web applications. I enjoy turning complex requirements into clean interfaces and scalable frontend architecture.",
+            intro: "I'm a frontend engineer focused on building modern, responsive, and maintainable web applications. I enjoy turning complex requirements into clean interfaces and scalable frontend architecture.",
             education: "Education",
             focus: "Current Focus",
             interests: "Interests",
