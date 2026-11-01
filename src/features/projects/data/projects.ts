@@ -59,7 +59,7 @@ export const projects: Project[] = [
         type: "Frontend",
         status: "Live",
         year: "2026",
-        demo: "https://al-fakahany.azal.digital/",
+        demo: "https://drive.google.com/file/d/19p43B3T60A5VpSwhTZwjiBHHSHkrInx_/view?usp=drive_link",
         featured: true,
         image: alFakahany,
         gradient: "from-orange-950 via-amber-950 to-orange-900",
